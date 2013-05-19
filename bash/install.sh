@@ -109,7 +109,7 @@ declare -A APP URI DIR
 
 APP[NAME]='Sublime Text'
 APP[VERSION]='2.0.1'
-APP[ARCH]='x64' # Left the value empty for 32-bit version
+APP[ARCH]=' x64' # Left the value empty for 32-bit version
 APP[DESCRIPTION]='Sophisticated text editor for code, markup and prose.'
 
 DIR[FHS_BIN]='/usr/bin'
@@ -123,7 +123,7 @@ DIR[SRC]="${DIR[WORK]}/Sublime Text 2"
 DIR[DEST]="${DIR[FHS_OPT]}/${DIR[APP]}"
 
 URI[BASE]='http://c758482.r82.cf2.rackcdn.com'
-URI[SRC]="${APP[NAME]} ${APP[VERSION]} ${APP[ARCH]}.tar.bz2"
+URI[SRC]="${APP[NAME]} ${APP[VERSION]}${APP[ARCH]}.tar.bz2"
 URI[TARGET]="${URI[BASE]}/${URI[SRC]// /%20}"
 URI[TARGET_FILE]="${DIR[WORK]}/${URI[SRC]// /_}"
 
@@ -131,16 +131,6 @@ URI[TARGET_FILE]="${DIR[WORK]}/${URI[SRC]// /_}"
 ####
 ## GENERIC functions -----------------------------------------------------------
 #
-
-debug () {
-	echo -e "SCRIPT:\n${SCRIPT[*]}"
-	echo "COLOR:"
-	echo "${COLOR[*]}"
-	echo -e "APP:\n${APP[*]}"
-	echo -e "URI:\n${URI[*]}"
-	echo -e "DIR:\n${DIR[*]}"
-	echo -e "MESSAGE:\n${MESSAGE[*]}"
-}
 
 ## Prints some informations about the script
 print_copyright () {
