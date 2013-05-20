@@ -112,7 +112,7 @@ APP[VERSION]='2.0.1'
 APP[ARCH]=' x64' # Left the value empty for 32-bit version
 APP[DESCRIPTION]='Sophisticated text editor for code, markup and prose.'
 
-DIR[FHS_BIN]='/usr/bin'
+DIR[FHS_BIN]='/opt/bin'
 DIR[FHS_OPT]='/opt'
 DIR[XDG]='/usr/share'
 DIR[XDG_ICON]="${DIR[XDG]}/icons/hicolor"
@@ -319,8 +319,8 @@ uninstall_binaries () {
 	local executable=${DIR[APP]:0:-2}
 	local symlinks=(${executable:0:4} ${executable} ${executable}-2)
 	for symlink in ${symlinks[*]}; do
-		if [ -h /usr/bin/$symlink ] ; then
-			rm -v /usr/bin/$symlink
+		if [ -h ${DIR[FHS_BIN]}/$symlink ] ; then
+			rm -v ${DIR[FHS_BIN]}/$symlink
 		fi
 	done
 }
