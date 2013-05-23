@@ -78,7 +78,7 @@ The directory structure used to install the software is compliant to FSH and
 XDG standards:
 
 - in `/opt/` is installed the package binaries
-- in `/usr/bin/` is installed the package symlinks
+- in `/opt/bin/` is installed the package symlinks
 - in `/usr/share/applications/` is installed the `.desktop` file
 - in `/usr/share/icons/hicolor/` are installed all the `.png`s for the icon
 
